@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./SleepCalculator.css";
 import FlagOfBrazil from '../src/assets/images/Flag_of_Brazil.svg';
 import FlagOfEua from '../src/assets/images/Flag_of_the_United_States.png';
+import BackgroundImage from  '../src/assets/images/sleepbg.jpg'; 
+
 
 const SleepCalculator = () => {
   const [bedtime, setBedtime] = useState("");
@@ -77,7 +79,11 @@ const SleepCalculator = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container"  style={{
+        background: `url(${BackgroundImage}) no-repeat center center fixed`,
+        backgroundSize: 'cover', // Para cobrir todo o fundo
+        height: '100vh', // Ajuste conforme necessário
+      }}>
       <div className="language-switcher">
         <img
           src={FlagOfBrazil}
@@ -113,7 +119,7 @@ const SleepCalculator = () => {
         </span>
         {language === 'pt' ? 'Calculadora de Sono' : 'Sleep Calculator'}
       </h1>
-      
+
       <label className="label-margin">{language === 'pt' ? messages.pt.bedtime : messages.en.bedtime}
       
         <input
