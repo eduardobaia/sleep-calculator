@@ -10,7 +10,7 @@
 
 ## Demo
 
-![Demo Image](sleep-calculator/src/assets/images/imagem-project.png)
+![Demo Image](src/assets/images/imagem-project.png)
 
 ## Installation
 
