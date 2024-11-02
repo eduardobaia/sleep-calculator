@@ -1,0 +1,97 @@
+/* SleepCalculator.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    /* background: url('https://media.istockphoto.com/id/1353123939/vector/snoring-vector-illustration-young-man-lying-in-the-bed-snores-loudly-with-open-mouth-while.jpg?s=612x612&w=0&k=20&c=msAbYMdtWSmIPFSfsdMfZL_1YJ4c2bArrjH5TnXuwpM=') no-repeat center center fixed; */
+    background: url('https://img.freepik.com/free-vector/person-sleeping-bed-background_23-2148159210.jpg?t=st=1730577963~exp=1730581563~hmac=7f06864f87c30b3a69fdf31c82bf00fec47ebc911c26187d163ff2ce703d50d3&w=1380') no-repeat center center fixed;
+    background-size: cover;
+    color: #f0f0f0;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* Overlay for better readability */
+    padding: 20px;
+  }
+  
+  h1 {
+    color: #FFD700;
+    font-size: 2.5em;
+  }
+  
+  label {
+    display: block;
+    margin: 10px 0;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  
+  input[type="time"] {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: #f0f0f0;
+    font-size: 1em;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin-top: 55px;
+    margin-bottom: 40px;
+    background-color: #a6b9cf;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #FFA500;
+  }
+  
+  p {
+    max-width: 600px;
+    margin: 20px auto;
+    font-size: 1em;
+    line-height: 1.6;
+    color: #dcdcdc;
+  }
+  
+  h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .footer {
+    margin-top: 90px;
+    font-size: 0.9em;
+    color: #dcdcdc;
+    text-align: center;
+    opacity: 0.7;
+  }
+  .footer a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
