@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/sleep-calculator/static/css/main.087f8f47.css",
+    "main.js": "/sleep-calculator/static/js/main.5f95aaac.js",
+    "static/js/453.e4ea1700.chunk.js": "/sleep-calculator/static/js/453.e4ea1700.chunk.js",
+    "static/media/sleepbg.jpg": "/sleep-calculator/static/media/sleepbg.4326347cd6e3119db36a.jpg",
+    "static/media/Flag_of_the_United_States.png": "/sleep-calculator/static/media/Flag_of_the_United_States.81ef06531850b21a340d.png",
+    "static/media/Flag_of_Brazil.svg": "/sleep-calculator/static/media/Flag_of_Brazil.3112c52af0bea47c62a7eace422354b5.svg",
+    "static/media/logo.svg": "/sleep-calculator/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/sleep-calculator/index.html",
+    "main.087f8f47.css.map": "/sleep-calculator/static/css/main.087f8f47.css.map",
+    "main.5f95aaac.js.map": "/sleep-calculator/static/js/main.5f95aaac.js.map",
+    "453.e4ea1700.chunk.js.map": "/sleep-calculator/static/js/453.e4ea1700.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.087f8f47.css",
+    "static/js/main.5f95aaac.js"
+  ]
+}
