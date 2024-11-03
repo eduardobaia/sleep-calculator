@@ -38,7 +38,42 @@ const SleepCalculator = () => {
     setLanguage(lang);
   };
 
-  const handleCalculate = () => {
+//   const handleCalculate = () => {
+//     if (!bedtime || !wakeUpTime) {
+//       setBestWakeUpTimes(["Please enter both bedtime and wake-up time."]);
+//       return;
+//     }
+
+//     const bedTimeDate = new Date(`1970-01-01T${bedtime}:00`);
+//     const wakeUpTimeDate = new Date(`1970-01-01T${wakeUpTime}:00`);
+
+//     // Se o horário de acordar é antes do de dormir, adiciona um dia ao horário de acordar
+//     if (wakeUpTimeDate <= bedTimeDate) {
+//       wakeUpTimeDate.setDate(wakeUpTimeDate.getDate() + 1);
+//     }
+
+//     const sleepCycle = 90 * 60 * 1000; // 90 minutos em milissegundos
+//     const optimalTimes = [];
+
+//     for (let i = 1; i <= 10; i++) {
+//       // Calcula até 10 ciclos
+//       const cycleEnd = new Date(bedTimeDate.getTime() + i * sleepCycle);
+//       if (cycleEnd > wakeUpTimeDate) break; // Para quando passa o horário de acordar
+//       optimalTimes.push(cycleEnd);
+//     }
+
+//     if (optimalTimes.length > 0) {
+//       // Obtém as duas últimas opções
+//       const recommendedTimes = optimalTimes
+//         .slice(-2) // Pega os últimos dois horários
+//         .map((time) => time.toTimeString().substring(0, 5));
+
+//       setBestWakeUpTimes(recommendedTimes);
+//     } else {
+//       setBestWakeUpTimes(["No optimal time found."]);
+//     }
+//   };
+const handleCalculate = () => {
     if (!bedtime || !wakeUpTime) {
       setBestWakeUpTimes(["Please enter both bedtime and wake-up time."]);
       return;
@@ -66,13 +101,23 @@ const SleepCalculator = () => {
       // Obtém as duas últimas opções
       const recommendedTimes = optimalTimes
         .slice(-2) // Pega os últimos dois horários
-        .map((time) => time.toTimeString().substring(0, 5));
+        .map((time) => {
+          // Calcula a duração do sono
+          const sleepDuration = new Date(time - bedTimeDate);
+          const hours = sleepDuration.getUTCHours();
+          const minutes = sleepDuration.getUTCMinutes();
+          const durationFormatted = `${hours}h ${minutes}m`;
+
+          // Formata o horário com a duração
+          return `${time.toTimeString().substring(0, 5)} - ${durationFormatted} of sleep`;
+        });
 
       setBestWakeUpTimes(recommendedTimes);
     } else {
       setBestWakeUpTimes(["No optimal time found."]);
     }
   };
+
 
   const toggleInfo = () => {
     setShowInfo(!showInfo);
