@@ -17,62 +17,27 @@ const SleepCalculator = () => {
     pt: {
       sleepInfo: "Os ciclos de sono normalmente duram cerca de 90 minutos e consistem em várias etapas, incluindo sono leve, sono profundo e sono REM (movimento rápido dos olhos). Acordar no final de um ciclo, em vez de no meio, ajuda você a se sentir mais renovado. Esta calculadora sugere os melhores horários para acordar com base em ciclos de sono completos para otimizar seu descanso.",
       calculateBestWakeUpTime: "Calcular Melhor Horário para Acordar",
-      bedtime: "Hora de Dormir",
-      desiredWakeUpTime: "Hora Desejada para Acordar",
+      bedtime: "Hora de dormir",
+      desiredWakeUpTime: "Hora desejada para acordar",
     },
     en: {
       sleepInfo: "Sleep cycles typically last about 90 minutes and consist of several stages, including light sleep, deep sleep, and REM (rapid eye movement) sleep. Waking up at the end of a cycle, rather than in the middle, helps you feel more refreshed. This calculator suggests the best times to wake up based on complete sleep cycles to optimize your rest.",
       calculateBestWakeUpTime: "Calculate Best Wake-Up Time",
       bedtime: "Bedtime",
-      desiredWakeUpTime: "Desired Wake Up Time",
+      desiredWakeUpTime: "Desired wake up time",
     },
   };
   
 
   const recommendedMessage =
     language === "pt"
-      ? "Horários Recomendados para Acordar:"
-      : "Recommended Wake-Up Times:";
+      ? "Horários recomendados para acordar:"
+      : "Recommended Wake-Up times:";
 
   const changeLanguage = (lang) => {
     setLanguage(lang);
   };
 
-//   const handleCalculate = () => {
-//     if (!bedtime || !wakeUpTime) {
-//       setBestWakeUpTimes(["Please enter both bedtime and wake-up time."]);
-//       return;
-//     }
-
-//     const bedTimeDate = new Date(`1970-01-01T${bedtime}:00`);
-//     const wakeUpTimeDate = new Date(`1970-01-01T${wakeUpTime}:00`);
-
-//     // Se o horário de acordar é antes do de dormir, adiciona um dia ao horário de acordar
-//     if (wakeUpTimeDate <= bedTimeDate) {
-//       wakeUpTimeDate.setDate(wakeUpTimeDate.getDate() + 1);
-//     }
-
-//     const sleepCycle = 90 * 60 * 1000; // 90 minutos em milissegundos
-//     const optimalTimes = [];
-
-//     for (let i = 1; i <= 10; i++) {
-//       // Calcula até 10 ciclos
-//       const cycleEnd = new Date(bedTimeDate.getTime() + i * sleepCycle);
-//       if (cycleEnd > wakeUpTimeDate) break; // Para quando passa o horário de acordar
-//       optimalTimes.push(cycleEnd);
-//     }
-
-//     if (optimalTimes.length > 0) {
-//       // Obtém as duas últimas opções
-//       const recommendedTimes = optimalTimes
-//         .slice(-2) // Pega os últimos dois horários
-//         .map((time) => time.toTimeString().substring(0, 5));
-
-//       setBestWakeUpTimes(recommendedTimes);
-//     } else {
-//       setBestWakeUpTimes(["No optimal time found."]);
-//     }
-//   };
 const handleCalculate = () => {
     if (!bedtime || !wakeUpTime) {
       setBestWakeUpTimes(["Please enter both bedtime and wake-up time."]);
@@ -108,7 +73,6 @@ const handleCalculate = () => {
           const minutes = sleepDuration.getUTCMinutes();
           const durationFormatted = `${hours}h ${minutes}m`;
 
-          // Formata o horário com a duração
           return `${time.toTimeString().substring(0, 5)} - ${durationFormatted} of sleep`;
         });
 
@@ -124,11 +88,7 @@ const handleCalculate = () => {
   };
 
   return (
-    <div className="container"  style={{
-        background: `url(${BackgroundImage}) no-repeat center center fixed`,
-        backgroundSize: 'cover', // Para cobrir todo o fundo
-        height: '100vh', // Ajuste conforme necessário
-      }}>
+    <div className="container" >
       <div className="language-switcher">
         <img
           src={FlagOfBrazil}
@@ -174,6 +134,7 @@ const handleCalculate = () => {
           className="input-margin" 
         />
   </label>
+  
       <label className="label-margin" >
       {language === 'pt' ? messages.pt.desiredWakeUpTime : messages.en.desiredWakeUpTime}
         <input
